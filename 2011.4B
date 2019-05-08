@@ -1,0 +1,20 @@
+2011.4B
+public String encryptMessage(String message){
+int indexString = 0;
+String add = "";
+//rc = 6. length = 12 
+for(int i = numRows * numCols; i < message.length() ; i += numRows * numCols){
+
+	Sting one = message.substring(indexString, i);//(0,6)(6,12)(12)
+	indexString += numRows * numCols;
+	fillBlock(one);
+	add += encyptBlock();
+
+}
+if(indexString != message.length()) ){
+	String remain = message.substring(indexString);
+	fillBlock(remain);
+	add += encyptBlock();
+	}
+	return add;
+}

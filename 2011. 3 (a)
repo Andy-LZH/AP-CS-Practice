@@ -1,0 +1,32 @@
+2011. 3 (a)
+
+public int nextTankToFill (int threshold) 
+{
+
+//设定index 0 为 minValue
+ int minIndex = 0;		
+
+//设定minValue为index 0 上的值（array上第一个值）
+ 	int minValue = tanks.get(0).getFuelLevel();
+
+ //for loop 遍历，由i起头，到array的最大index结束：tanks.size() 为 index + 1
+ for (int i = 1 ; i < tanks.size(); i ++) 
+ {
+
+ // 从 i = 1 时 开始, 递增到 i = tanks.size() - 1 结束，如若有满足条件的 i 则进入if 并将minValue的值改为先前满足条件的i值，再做比较，直到 i = tank.size() -1; if条件不断更改，minValue递减（如满足条件），找到最小值和最小值所在index。
+
+  if (tanks.get(i).getFuelLevel() < minValue) 
+  {
+   minIndex = i;
+   minValue = tanks.get(i).getFuelLevel();
+  }
+ }
+ //找到最小值后，再和阀值对比
+ if (minValue <= threshold) 
+ {
+ //如if条件：有最小值且最小值小于阀值，return出minIndex
+  return minIndex;
+ }
+ //如if条件全部不满足，return 当前位置
+ return filler.getCurrentIndex();
+}

@@ -1,0 +1,25 @@
+private void fillBlock(String str){
+
+letterBlock = new String[numRows][numCols];
+	
+	if(numRows * numCols < str.length()){
+		str = str.substring(0,numRows * numCols);
+
+//else配最近的if，并列的，else if 都看 if
+	}else if(numRows * numCols > str.length()){
+		str += (numRows * numCols - str.length()) * "A";
+
+
+	}//对处理完的str做处理
+//i < numRows; numRows是length。
+	int indexString = 0;
+	for(int i = 0; i < numRows; i ++){
+
+		for(int h = 0; h < numCols; h ++){
+			letterBlock[i][h] = str.substring(indexString, indexString + 1);
+			indexString ++;
+		}
+	}
+
+
+}
