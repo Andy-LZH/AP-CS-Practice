@@ -1,0 +1,34 @@
+1.a
+public static int arraySum(int[] array){
+int count = 0;
+for(int i = 0; i < array.length(); i ++）{
+  count += array[i];
+}
+return count;
+}
+
+1.b
+public static int rowSums(int[][] arr2D){
+  int[]baseArray = new int[arr2D.length];
+  for(int i = 0; i < arr2D.length; i ++){
+  // length without ()in array
+  //i为新baseArray的index，同时i也表示arr2D第一行的sum,视arr2D[i] as parameter of arraySum method. 
+  
+    baseArray[i] = arraySum(arr2D[i]);
+    
+ }
+ return baseArray;
+}
+
+1.c
+public static boolean isDiverse(int[][] arr2D){
+int arr[] = rowSums(int[][]arr2D);
+int compare = arr[0];
+  for(int i = 1; i < arr2D.length; i ++){
+    if(arr[i] == compare){
+      return false;
+      // note that once the return has been called, it will not be altered
+    }
+      compare = arr[i];
+  }
+}
