@@ -6,10 +6,12 @@ public static String scrambleWord(String Word){
       if(use = "A"){
         String swap = Word.substring(i,i+1);
         persv += swap;
-        persv += use;   
-     }
+        persv += use; 
+	i++;
+     }else{
      use = Word.substring(i,i+1);
      persv += use;
+     }
   }
 return persv;
 }
