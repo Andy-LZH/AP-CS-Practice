@@ -14,9 +14,22 @@ public static String scrambleWord(String Word){
 return persv;
 }
 2014.1.b
-public scrambleOrRemove(List<String> wordList)
-{
+public static void scrambleOrRemove(List<String> wordList){
 
-
-
+ String use = "";
+ String useTwo = "";
+ List<String> output = new Arraylist<>();
+ 
+	for(int i = 0; i < wordList.size(); i ++){
+		use = wordList.get(i);
+		useTwo = scrambleWord(use);
+    
+    if(use != useTwo){
+      output.add(useTwo);
+      
+    }
+		
+		
+	}	
+return output;
 }
