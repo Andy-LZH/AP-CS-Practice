@@ -1,0 +1,34 @@
+2.a
+public TokenPass(int playerCount){
+  board = new int[playerCount];
+  currentPlayer = (int)(Math.random() * playerCount);
+    for(int i = 0; i < playerCount; i++){
+      board[i] = (int)(Math.random() * 10 + 1);
+    
+    }
+  
+}
+
+2.b
+public void distributeCurrentPlayerTokens(){
+  int value = board[currentPlayer];
+  board[currentPlayer] = 0;
+  int index = currentPlayer + 1;
+    while(value != 0){
+      if(index < board.length){
+        board[index] ++;
+        index ++;
+        value --;
+      }else{
+        index = 0;
+        board[index]++;
+        value --;
+        index ++;
+      
+      
+      }
+    
+    
+    }
+
+}
