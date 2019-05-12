@@ -1,0 +1,44 @@
+4.a
+public SkyView(int numRows, int numCols, double[] scanned){
+  
+    view = double[numRows][numCols];
+    int index = 0;
+    for(int i = 0; i < numRows; i ++){
+      if(i % 2 == 0){
+        for(int a = 0; a < numCols; a++){
+          view[i][a] = scanned[index];
+          index ++;
+        
+        }
+      }else{
+         for(int b = numCols - 1; b > -1; b--){
+         
+            view[i][b] = scanned[index];
+            index ++;
+         
+         }
+      
+      }
+    
+    
+    }
+
+
+
+}
+4.b
+public double getAverage(int startRow, int endRow, int startCol, int endCol){
+
+  int denomenator = (endRow - startRow + 1) * (endCol - startCol + 1);
+  double sum = 0;
+    for(int i = startRow; i < endRow + 1; i ++){
+        
+    
+      for(int c = startCol; c < endCol + 1; c ++){
+        sum += view[i][c];
+      
+      }
+    }
+    return sum/denomenator;
+}
+
