@@ -1,0 +1,33 @@
+2016.1
+
+public class RandomStringChooser {
+  private String stringArray[];
+  private ArrayList<String> Str = new ArrayList<>();
+
+  public RandomStringChooser(String stringArray[]){
+    this.stringArray= stringArray;
+  }
+  public String getNext(){
+    int index = (int)((stringArray.length * Math.random()));
+    String str = stringArray[index];
+    for(int i = 0; i < Str.size(); i ++ ){
+      if(Str.get(i).equals(str)){
+        return "NONE";
+      }
+
+
+      }
+    Str.add(str);
+    return str;
+    }
+
+  public static void main(String[] args) {
+    String wow[] = new String[]{"Alpha", "beta", "Charlie"};
+    RandomStringChooser one = new RandomStringChooser(wow);
+    for (int b = 0; b < 6; b++) {
+      System.out.println(one.getNext());
+    }
+  }
+
+  }
+
